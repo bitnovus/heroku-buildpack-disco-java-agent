@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+BUILD_DIR=$1
+CACHE_DIR=$2
+ENV_DIR=$3
+
+AGENT_DOWNLOAD_LINK="https://github.com/aws/aws-xray-java-agent/releases/latest/download/xray-agent.zip"
+
+cd $CACHE_DIR
+wget -nc "$AGENT_DOWNLOAD_LINK"
+
+unzip -o xray-agent.zip
+
+cp -r $CACHE_DIR/disco $BUILD_DIR
